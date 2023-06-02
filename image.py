@@ -27,5 +27,5 @@ def sticker(text)->Image:
 def no_bg(image)->Image:
     art = Image.open(BytesIO(base64.b64decode(image)))
     nobg = remove(art)
-    nobg.save("nobg.png","PNG")
+    nobg.save("images/nobg.png","PNG")
     return "ok"
