@@ -39,6 +39,29 @@ client.on('message',async message => {
                 chat.sendMessage("Sticker Creation Faild")
             }
         }
+        else{
+
+        }
+        
+	}
+    if(message.body.includes('!sticker') && message.body.includes('!nobg')) {
+        if(message.hasMedia){
+            const chat = await message.getChat()
+            const stickerMedia = await message.downloadMedia()
+            try{
+                axios.post("http://localhost:5000/nobg",{image:stickerMedia.data})
+                .then((res)=>{
+                    const stickerMedia = MessageMedia.fromFilePath('images/sign.png');
+                    chat.sendMessage(stickerMedia,{sendMediaAsSticker:true})
+                })
+            }
+            catch {
+                chat.sendMessage("Sticker Creation Faild")
+            }
+        }
+        else{
+            
+        }
         
 	}
 });
