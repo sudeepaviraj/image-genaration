@@ -9,3 +9,6 @@ def hello_world():
     dataset = json.loads(request.data)
     print(dataset["name"])
     return create(dataset["name"])
+
+if(__name__=="__main__"):
+    app.run()
