@@ -51,7 +51,7 @@ client.on('message',async message => {
             try{
                 axios.post("http://localhost:5000/nobg",{image:stickerMedia.data})
                 .then((res)=>{
-                    const stickerMedia = MessageMedia.fromFilePath('images/sign.png');
+                    const stickerMedia = MessageMedia.fromFilePath('images/nobg.png');
                     chat.sendMessage(stickerMedia,{sendMediaAsSticker:true})
                 })
             }
