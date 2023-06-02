@@ -29,7 +29,12 @@ client.on('message',async message => {
         if(message.hasMedia){
             const chat = await message.getChat()
             const stickerMedia = await message.downloadMedia()
-            chat.sendMessage(stickerMedia,{sendMediaAsSticker:true})
+            try{
+                chat.sendMessage(stickerMedia,{sendMediaAsSticker:true})
+            }
+            catch {
+                chat.sendMessage("Sticker Creation Faild")
+            }
         }
         
 	}
