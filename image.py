@@ -42,7 +42,7 @@ def no_bg(image) -> Image:
 def music(title):
     videosSearch = VideosSearch(title, limit=1)
     link = videosSearch.result()["result"][0]["link"]
-    filename = subprocess.check_output(f'yt-dlp {link} -f ba --print filename -o "music/output.%(ext)s"')
+    filename = subprocess.check_output(f'yt-dlp {link} -f ba --print filename')
     filename = filename.decode("utf-8").strip()
     os.system(f"yt-dlp {link} -f ba -o 'music/output.%(ext)s'")
     os.system(f"ffmpeg -y -i '{filename}' -b:a 128k -c:a libopus 'music/output.opus'")
