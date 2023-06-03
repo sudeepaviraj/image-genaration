@@ -4,7 +4,6 @@ from io import BytesIO
 import base64
 from rembg import remove
 from youtubesearchpython import VideosSearch
-import yt_dlp
 import json
 import subprocess
 
