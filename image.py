@@ -46,6 +46,8 @@ def music(title):
     filename = subprocess.check_output(f'yt-dlp {link} -f ba --print filename -o music/output.%(ext)s')
     filename = filename.decode("utf-8").strip()
     os.system(f"yt-dlp {link} -f ba -o music/output.%(ext)s")
-    os.system(f"ffmpeg -y -i {filename} -b:a 192k music/output.ogg")
+    os.system(f"ffmpeg -y -i {filename} -b:a 128k -c:a libopus music/output.opus")
+    os.system(f"del {filename}")
     return "ok"
+
 music("prathihari")

@@ -1,5 +1,5 @@
 from flask import Flask,request
-from image import create,no_bg
+from image import create,no_bg,music
 import json
 import re
 
@@ -18,6 +18,13 @@ def nobg():
     dataset = json.loads(request.data)
     print(dataset["image"])
     return no_bg(dataset["image"])
+
+@app.route("/music",methods=['GET', 'POST'])
+def musix():
+    dataset = json.loads(request.data)
+    print(dataset["music"])
+    return music(dataset["music"])
+
 
 
 if(__name__=="__main__"):
