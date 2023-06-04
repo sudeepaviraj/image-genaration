@@ -73,6 +73,11 @@ client.on('message',async message => {
             })
             
         }
+        if(message.body.includes('!help')) {
+            const chat = await message.getChat()
+            chat.sendMessage(``)
+            
+        }
 });
  
 
