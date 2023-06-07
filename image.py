@@ -45,6 +45,7 @@ def guess(image) -> Image:
     art.save("images/recog.jpg")
     guss = recog("images/recog.jpg")
     print(guss)
+    return guss
 
 
 def music(title):
