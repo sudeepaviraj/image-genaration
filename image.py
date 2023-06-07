@@ -6,6 +6,7 @@ from rembg import remove
 from youtubesearchpython import VideosSearch
 import json
 import subprocess
+from imagerecg import recog
 
 
 def create(text) -> Image:
@@ -37,6 +38,13 @@ def no_bg(image) -> Image:
     nobg = remove(art)
     nobg.save("images/nobg.png", "PNG")
     return "ok"
+
+
+def guess(image) -> Image:
+    art = Image.open(BytesIO(base64.b64decode(image)))
+    art.save("images/recog.jpg")
+    guss = recog("images/recog.jpg")
+    print(guss)
 
 
 def music(title):
