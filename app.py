@@ -20,7 +20,7 @@ def nobg():
     return no_bg(dataset["image"])
 
 @app.route("/guess",methods=['GET', 'POST'])
-def nobg():
+def guess():
     dataset = json.loads(request.data)
     print(dataset["image"])
     return no_bg(dataset["image"])
