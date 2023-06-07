@@ -1,5 +1,5 @@
 from flask import Flask,request
-from image import create,no_bg,music
+from image import create,no_bg,music,guess
 import json
 import re
 
@@ -23,7 +23,7 @@ def nobg():
 def guess():
     dataset = json.loads(request.data)
     print(dataset["image"])
-    return no_bg(dataset["image"])
+    return guess(dataset["image"])
 
 @app.route("/music",methods=['GET', 'POST'])
 def musix():

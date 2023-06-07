@@ -1,8 +1,8 @@
 from torchvision.io import read_image
 from torchvision.models import resnet50, ResNet50_Weights
 
-def recog():
-    img = read_image("test/assets/encode_jpeg/grace_hopper_517x606.jpg")
+def recog(img):
+    img = read_image(img)
 
     # Step 1: Initialize model with the best available weights
     weights = ResNet50_Weights.DEFAULT
