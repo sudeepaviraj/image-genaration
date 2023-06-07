@@ -64,7 +64,7 @@ client.on('message', async message => {
         }
 
     }
-    if (message.body.includes('!guss')) {
+    if (message.body.includes('!guess')) {
         if (message.hasMedia) {
             const chat = await message.getChat()
             const stickerMedia = await message.downloadMedia()
