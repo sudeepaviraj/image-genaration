@@ -71,7 +71,7 @@ client.on('message', async message => {
             try {
                 axios.post("http://localhost:5000/guess", { image: stickerMedia.data })
                     .then((res) => {
-                        chat.sendMessage(res.data)
+                        message.reply(res.data)
                     })
             }
             catch {
