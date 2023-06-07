@@ -19,11 +19,18 @@ def nobg():
     print(dataset["image"])
     return no_bg(dataset["image"])
 
+@app.route("/guess",methods=['GET', 'POST'])
+def nobg():
+    dataset = json.loads(request.data)
+    print(dataset["image"])
+    return no_bg(dataset["image"])
+
 @app.route("/music",methods=['GET', 'POST'])
 def musix():
     dataset = json.loads(request.data)
     print(dataset["music"])
     return music(dataset["music"])
+
 
 
 
