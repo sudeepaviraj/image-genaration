@@ -80,26 +80,5 @@ client.on('message', async message => {
         }
 
     }
-    if (message.body.includes('!music')) {
-        const chat = await message.getChat()
-        axios.post("http://localhost:5000/music", { music: message.body.replace("!music", "") })
-            .then((res) => {
-                const voice = MessageMedia.fromFilePath('music/output.opus');
-                chat.sendMessage(voice, { sendAudioAsVoice: true })
-            })
-
-    }
-    
 });
-if (message.body.includes('!music')) {
-        const chat = await message.getChat()
-        axios.post("http://localhost:5000/music", { music: message.body.replace("!music", "") })
-            .then((res) => {
-                const voice = MessageMedia.fromFilePath('music/output.opus');
-                chat.sendMessage(voice, { sendAudioAsVoice: true })
-            })
-
-    }
-
-
 client.initialize();
